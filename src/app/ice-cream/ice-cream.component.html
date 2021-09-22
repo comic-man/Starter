@@ -1,2 +1,17 @@
+<label>Server Name</label>
+<!--<input 
+    type="text"
+    class="form-control"
+    (input)="onUpateServerName($event)">-->
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
+<button 
+    class="btn btn-primary"
+     [disabled]="!allowNewServer"
+     (click)="onCreateServer()">Add Ice Cream</button>
+<p>{{ serverCreationStatus }}</p>
 <app-ice></app-ice>
 <app-ice></app-ice>

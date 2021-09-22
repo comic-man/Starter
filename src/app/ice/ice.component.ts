@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ice.component.css']
 })
 export class IceComponent implements OnInit {
-
-  constructor() { }
-
+    serverId: number = 10;
+    serverStatus: string = 'offline';
+    
+    getServerStatus (){
+      return this.serverStatus;
+    }
   ngOnInit(): void {
   }
-
 }
