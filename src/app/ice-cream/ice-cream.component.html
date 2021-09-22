@@ -7,11 +7,15 @@
     type="text"
     class="form-control"
     [(ngModel)]="serverName">
-<p>{{ serverName }}</p>
+<!--<p>{{ serverName }}</p>-->
 <button 
     class="btn btn-primary"
      [disabled]="!allowNewServer"
      (click)="onCreateServer()">Add Ice Cream</button>
-<p>{{ serverCreationStatus }}</p>
-<app-ice></app-ice>
-<app-ice></app-ice>
+<!--<p>{{ serverCreationStatus }}</p>-->
+<p *ngIf="serverCreated; else noServer">Ice Cream was added, ice cream name is {{ serverName }}</p>
+<ng-template #noServer>
+   <p> No Ice Cream was added!</p>
+</ng-template>
+<app-ice *ngFor="let server of servers"></app-ice>
+

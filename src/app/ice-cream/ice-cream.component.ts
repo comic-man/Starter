@@ -12,6 +12,8 @@ export class IceCreamComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No Ice Cream was added.';
   serverName ='';
+  serverCreated =false;
+  servers = ['Testserver, Testserver2'];
 
   constructor() {
     setTimeout(() => {
@@ -23,6 +25,8 @@ export class IceCreamComponent implements OnInit {
   }
 
   onCreateServer() {
+    this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'Ice Cream was Added!' + this.serverName;
   }
 
